@@ -36,3 +36,6 @@ fun DefaultPreview() {
 
     MessageCard(Message("Lexi", "Hey, take a look at Jetpack Compose, it's great!"))
 }
+//Esse código cria dois elementos de texto dentro da visualização do conteúdo. 
+//No entanto, como você não deu nenhuma informação sobre como organizar os elementos, 
+//eles são mostrados uns sobre os outros, o que deixa o texto ilegível.
