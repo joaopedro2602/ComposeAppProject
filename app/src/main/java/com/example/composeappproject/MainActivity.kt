@@ -16,23 +16,23 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            //passa  por parametro a mesangem "Android" para o metodo "MessageCard"
-            MessageCard(name = "Android")
+
+            MessageCard(Message("Android", "Jetpack Compose"))
         }
     }
 }
-//@Composable irá transformar o metodo em composto
+data class Message(val author: String, val body: String)
+
 @Composable
-fun MessageCard(name: String) {
-    //coloca as String "Hello" e "Android" em uma frase só
-    Text(text = "Hello $name!")
+fun MessageCard(msg: Message) {
+
+    Text(text = msg.author)
+    Text(text = msg.body)
 }
-//Preview irá possiblitar a vizualização do app previamente, porém ele
-//não funciona em metodos com passagem de parametro, por isso é criada uma nova
-//para podermos vizualizar o design do app
-@Preview(showBackground = true)
+
+@Preview
 @Composable
 fun DefaultPreview() {
 
-    MessageCard(name = "Android")
+    MessageCard(Message("Lexi", "Hey, take a look at Jetpack Compose, it's great!"))
 }
